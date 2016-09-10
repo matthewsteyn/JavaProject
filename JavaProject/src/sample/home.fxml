@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.canvas.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.HomeController">
+   <top>
+      <Pane prefHeight="55.0" prefWidth="1280.0" style="-fx-background-color: #829fb0;" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="510.0" layoutY="6.0" text="Maze-Solving Robot" textFill="WHITE">
+               <font>
+                  <Font size="29.0" />
+               </font>
+            </Label>
+         </children>
+         <padding>
+            <Insets right="5.0" />
+         </padding>
+      </Pane>
+   </top>
+   <left>
+      <Pane prefHeight="745.0" prefWidth="220.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="69.0" opacity="0.5" text="Menu" textAlignment="CENTER">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+            <Button fx:id="btnMaze" layoutY="73.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#mazeWindow" prefHeight="40.0" prefWidth="220.0" text="Maze">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnSimulate" layoutY="113.0" mnemonicParsing="false" onAction="#simulateWindow" prefHeight="40.0" prefWidth="220.0" text="Simulate">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button fx:id="btnStatistics" layoutY="153.0" mnemonicParsing="false" onAction="#statisticsWindow" prefHeight="40.0" prefWidth="220.0" text="Statistics">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+         </children>
+         <BorderPane.margin>
+            <Insets left="1.0" top="1.0" />
+         </BorderPane.margin>
+      </Pane>
+   </left>
+   <center>
+      <Pane fx:id="pnlContainer" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="838.0" style="-fx-background-color: #eae8e1;" BorderPane.alignment="CENTER">
+         <children>
+            <Pane fx:id="pnlAddUser" prefHeight="616.0" prefWidth="838.0">
+               <children>
+                  <Label layoutX="350.0" layoutY="63.0" text="Add User">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="160.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="95.0" text="First Name:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="197.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="95.0" text="Surname:" textAlignment="RIGHT" />
+                  <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="231.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="95.0" text="Student Number:" textAlignment="RIGHT" />
+                  <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="267.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="95.0" text="Email Address:" textAlignment="RIGHT" />
+                  <Label fx:id="lblAddUserMessage" layoutX="355.0" layoutY="333.0" text="User added successfully." />
+                  <TextField fx:id="edtAddFirstName" layoutX="407.0" layoutY="156.0" />
+                  <TextField fx:id="edtAddSurname" layoutX="407.0" layoutY="193.0" />
+                  <TextField fx:id="edtAddStudentNo" layoutX="407.0" layoutY="227.0" />
+                  <TextField fx:id="edtAddEmail" layoutX="407.0" layoutY="263.0" />
+                  <Button fx:id="btnAddUser" layoutX="348.0" layoutY="368.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnAddUser" prefHeight="25.0" prefWidth="65.0" text="Add User" />
+                  <Button fx:id="btnClearUserAdd" layoutX="429.0" layoutY="368.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#clearAddUser" prefHeight="25.0" prefWidth="65.0" text="Clear" />
+                  <CheckBox fx:id="cbxAdmin" layoutX="407.0" layoutY="300.0" mnemonicParsing="false" text="Administrator" />
+                  <Label alignment="CENTER_RIGHT" layoutX="280.0" layoutY="125.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="95.0" text="Username:" />
+                  <TextField fx:id="edtAddUsername" layoutX="407.0" layoutY="121.0" />
+               </children></Pane>
+            <Pane fx:id="pnlUpdateDetails" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="838.0" visible="false">
+               <children>
+                  <Label alignment="TOP_CENTER" layoutX="289.0" layoutY="52.0" text="Update Details" textFill="#00000081">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="261.0" layoutY="146.0" text="Username:" />
+                  <Label layoutX="282.0" layoutY="179.0" text="Name:" />
+                  <Label layoutX="264.0" layoutY="212.0" prefHeight="17.0" prefWidth="50.0" text="Surname:" />
+                  <Label layoutX="244.0" layoutY="244.0" text="Email Address:" />
+                  <Label layoutX="230.0" layoutY="278.0" text="Student Number:" />
+                  <TextField fx:id="edtUpdateUsername" layoutX="385.0" layoutY="142.0" />
+                  <TextField fx:id="edtUpdateName" layoutX="385.0" layoutY="175.0" />
+                  <TextField fx:id="edtUpdateEmail" layoutX="385.0" layoutY="240.0" />
+                  <TextField fx:id="edtUpdateSurname" layoutX="385.0" layoutY="208.0" />
+                  <TextField fx:id="edtUpdateStudentNo" layoutX="385.0" layoutY="274.0" />
+                  <Button fx:id="btnUpdate" layoutX="333.0" layoutY="376.0" mnemonicParsing="false" onAction="#btnUpdateDetails" text="Update" />
+                  <Button fx:id="btnClearUpdate" layoutX="401.0" layoutY="376.0" mnemonicParsing="false" onAction="#clearUpdate" text="Clear" />
+                  <Label layoutX="339.0" layoutY="338.0" text="Update successful." />
+               </children></Pane>
+            <Pane fx:id="pnlChangePassword" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="616.0" prefWidth="838.0" visible="false">
+               <children>
+                  <Label alignment="CENTER" layoutX="286.0" layoutY="54.0" text="Change Password">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER_RIGHT" layoutX="240.0" layoutY="149.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="126.0" text="Enter Old Password:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="240.0" layoutY="188.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="126.0" text="Enter New Password:" />
+                  <Label alignment="CENTER_RIGHT" layoutX="240.0" layoutY="229.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="17.0" prefWidth="126.0" text="Confirm New Password:" />
+                  <Label fx:id="lblPasswordMessage" layoutX="335.0" layoutY="281.0" text="Password changed successfully." />
+                  <Button fx:id="btnUpdatePassword" layoutX="360.0" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnUpdatePassword" prefHeight="25.0" prefWidth="55.0" text="Update" />
+                  <Button fx:id="btnClearPassword" layoutX="428.0" layoutY="321.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#btnClearPassword" prefHeight="25.0" prefWidth="55.0" text="Clear" />
+                  <PasswordField fx:id="edtOldPassword" layoutX="419.0" layoutY="145.0" />
+                  <PasswordField fx:id="edtNewPassword" layoutX="419.0" layoutY="184.0" />
+                  <PasswordField fx:id="edtConfirmPassword" layoutX="419.0" layoutY="225.0" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlMaze" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="838.0" visible="false">
+               <children>
+                  <Label layoutX="379.0" layoutY="54.0" text="Maze">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxMazeChoice" layoutX="344.0" layoutY="116.0" prefWidth="150.0" promptText="Choose maze..." />
+                  <Canvas fx:id="canvasMaze" height="400.0" layoutX="219.0" layoutY="165.0" width="400.0">
+                     <effect>
+                        <DropShadow color="#00000080" />
+                     </effect>
+                  </Canvas>
+                  <Button fx:id="btnSaveCanvas" layoutX="353.0" layoutY="577.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Save" />
+                  <Button fx:id="btnClearCanvas" layoutX="434.0" layoutY="577.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="55.0" text="Clear" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlSimulate" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="838.0" visible="false">
+               <children>
+                  <Label layoutX="354.0" layoutY="53.0" text="Simulate">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxSelectMaze" layoutX="344.0" layoutY="133.0" prefWidth="150.0" promptText="Select maze..." />
+                  <ComboBox fx:id="cbxSelectProgram" layoutX="344.0" layoutY="178.0" prefWidth="150.0" promptText="Select program" />
+                  <ProgressBar fx:id="SimulationProgress" layoutX="319.0" layoutY="227.0" prefWidth="200.0" progress="0.0" />
+                  <Label fx:id="lblSimulateMessage" layoutX="327.0" layoutY="258.0" text="Simulation completed successfully." />
+                  <Button fx:id="btnRunSimulation" layoutX="311.0" layoutY="296.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="Run Simulation" />
+                  <Button fx:id="btnClearSimulation" layoutX="425.0" layoutY="296.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefWidth="100.0" text="Clear" />
+                  <Button fx:id="btnViewStats" layoutX="369.0" layoutY="335.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="25.0" prefWidth="100.0" text="View Statistics" />
+               </children>
+            </Pane>
+            <Pane fx:id="pnlStatistics" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="616.0" prefWidth="838.0" visible="false">
+               <children>
+                  <Label layoutX="354.0" layoutY="66.0" text="Statistics">
+                     <font>
+                        <Font size="34.0" />
+                     </font>
+                  </Label>
+                  <ComboBox fx:id="cbxStatisticsRun" layoutX="344.0" layoutY="146.0" prefWidth="150.0" promptText="Select run..." />
+                  <TableView fx:id="tblStatistics" layoutX="219.0" layoutY="207.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="300.0" prefWidth="400.0">
+                    <columns>
+                      <TableColumn prefWidth="75.0" text="C1" />
+                      <TableColumn prefWidth="75.0" text="C2" />
+                    </columns>
+                  </TableView>
+               </children>
+            </Pane>
+         </children>
+      </Pane>
+   </center>
+   <right>
+      <MenuButton id="cmbUsername" fx:id="cmbUser" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="220.0" text="Username" textAlignment="CENTER" BorderPane.alignment="TOP_CENTER">
+        <items>
+          <MenuItem fx:id="miAddUser" mnemonicParsing="false" onAction="#addUser" text="Add user" />
+          <MenuItem fx:id="miUpdateDetails" mnemonicParsing="false" onAction="#updateDetails" text="Update details" />
+            <MenuItem fx:id="miChangePassword" mnemonicParsing="false" onAction="#changePassword" text="Change password" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem fx:id="miLogout" mnemonicParsing="false" onAction="#logOut" text="Logout" />
+        </items>
+         <effect>
+            <DropShadow color="#0000004c" />
+         </effect>
+         <BorderPane.margin>
+            <Insets right="1.0" top="1.0" />
+         </BorderPane.margin>
+      </MenuButton>
+   </right>
+</BorderPane>

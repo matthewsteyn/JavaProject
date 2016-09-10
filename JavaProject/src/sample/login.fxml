@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="370.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.LoginController">
+   <center>
+      <Pane prefHeight="403.0" prefWidth="600.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button id="btnLogin" fx:id="btnLogin" layoutX="247.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnLoginClicked" text="Login" />
+            <Button id="btnClose" fx:id="btnCloseApp" layoutX="310.0" layoutY="251.0" mnemonicParsing="false" onAction="#btnCloseClicked" text="Close" />
+            <Label id="lblMazeSolvingRobot" fx:id="lblMainLabel" layoutX="81.0" layoutY="68.0" text="Maze-Solving Robot">
+               <font>
+                  <Font size="51.0" />
+               </font>
+            </Label>
+            <TextField id="txtUsername" fx:id="edtUsername" layoutX="226.0" layoutY="153.0" promptText="Username" />
+            <Label id="lblUnsuccessful" fx:id="lblMessage" layoutX="172.0" layoutY="223.0" text="Login unsuccessful.  Please re-enter your details." visible="false" BorderPane.alignment="CENTER" />
+            <PasswordField id="txtPassword" fx:id="edtPassword" layoutX="226.0" layoutY="188.0" promptText="Password" />
+         </children>
+      </Pane>
+   </center>
+</BorderPane>
